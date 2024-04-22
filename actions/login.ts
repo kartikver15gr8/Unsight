@@ -22,7 +22,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
   //   throw new Error("Write your clg email");
   // }
 
-  signIn("email", { email, redirectTo: "/dashboard" });
+  signIn("email", { email, redirectTo: "/dashboard/feed" });
 
   return { success: `Email sent to ${email}` };
 };
