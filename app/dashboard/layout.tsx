@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { Providers } from "./providers";
+import { Inter, Kanit } from "next/font/google";
+import Sidebar from "@/components/sidebar";
+import Landing from "@/components/landing";
+import Explorebar from "@/components/explorebar";
 import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+const kanit = Kanit({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Navbar />
+        <div className="flex min-h-screen pt-14">
+          <Sidebar />
+          {children}
+          <Explorebar />
+        </div>
       </body>
     </html>
   );

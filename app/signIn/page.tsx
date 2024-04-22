@@ -5,6 +5,7 @@ import { auth } from "@/auth";
 
 const SignInPage = async () => {
   const session = await auth();
+
   return <div>{session ? redirect("/") : <SignInForm />}</div>;
 };
 
