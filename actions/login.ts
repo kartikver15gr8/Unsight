@@ -18,6 +18,10 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
 
   const { email } = isValid.data;
 
+  // if (email.indexOf("gmail.com") >= 0) {
+  //   throw new Error("Write your clg email");
+  // }
+
   signIn("email", { email, redirectTo: "/dashboard" });
 
   return { success: `Email sent to ${email}` };
