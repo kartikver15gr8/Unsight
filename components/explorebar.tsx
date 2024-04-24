@@ -6,7 +6,7 @@ export default function Explorebar() {
       <Card className="m-2 pl-4 text-lg bg-black text-white rounded-xl border-slate-400 h-16 shadow-md shadow-slate-600 flex items-center">
         sponsored
       </Card>
-      <Card className="m-2 p-2 text-white pl-4 text-lg rounded-xl shadow-md shadow-slate-600 flex flex-col bg-black">
+      <Card className="m-2 p-2 text-white pl-4 text-lg rounded-xl shadow-md shadow-slate-600 flex flex-col bg-black border border-slate-400">
         <p className="font-bold mb-2">Popular posts</p>
         <div className="border-b pb-2 my-2">
           <div className="flex flex-col">

@@ -2,7 +2,7 @@ import { Card } from "./ui/card";
 
 export default function PostCard() {
   return (
-    <Card className="p-4 my-4">
+    <Card className="p-4 my-4 bg-slate-400">
       <div className="flex">
         <img
           className="w-12 rounded-full mr-2"

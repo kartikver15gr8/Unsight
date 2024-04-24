@@ -13,23 +13,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model User {
   id            String          @id @default(cuid())
   name          String?
   email         String          @unique
-  password     String?
+  password      String?
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
+  posts         Posts[]
   // Optional for WebAuthn support
   Authenticator Authenticator[]
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
- 
+
+model Posts {
+  id          Int     @id @default(autoincrement())
+  description String
+  imgUrl      String?
+  user        User    @relation(fields: [userId], references: [id])
+  userId      String
+  like        Int?
+}
+
 model Account {
   userId            String
   type              String
@@ -42,35 +51,34 @@ model Account {
   scope             String?
   id_token          String?
   session_state     String?
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
- 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   @@id([provider, providerAccountId])
 }
- 
+
 model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
- 
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
- 
+
 model VerificationToken {
-  
   identifier String
-  token      String @unique
+  token      String   @unique
   expires    DateTime
   email      String?
- 
+
   @@id([identifier, token])
 }
- 
+
 // Optional for WebAuthn support
 model Authenticator {
   id                   String  @id @default(cuid())
@@ -82,6 +90,6 @@ model Authenticator {
   credentialDeviceType String
   credentialBackedUp   Boolean
   transports           String?
- 
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

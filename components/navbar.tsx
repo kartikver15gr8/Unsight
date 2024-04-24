@@ -15,7 +15,7 @@ export default function Navbar() {
   const session = useSession();
   const pathname = usePathname();
   return (
-    <div className="flex w-full justify-between bg-slate-100 h-16 shadow-md fixed z-20  backdrop-blur-lg bg-[rgba(0,0,0,0.7)]">
+    <div className="flex w-full justify-between  h-16 shadow-md fixed z-20  backdrop-blur-lg bg-black bg-opacity-60">
       <div className="flex items-center ml-5">
         <Link href="/">
           <img

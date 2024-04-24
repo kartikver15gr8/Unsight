@@ -2,7 +2,7 @@ import Reveal from "./reveal";
 
 export default function MainpageTitle() {
   return (
-    <div className="flex mt-10 lg:mt-14 md:mt-14 sm:mt-10 xl:mt-20 2xl:mt-20 font-bold flex-col w-[80%] items-center text-black p-4 ">
+    <div className="flex my-10 lg:mt-14 md:mt-14 sm:mt-10 xl:mt-20 2xl:mt-20 font-bold flex-col w-[80%] items-center text-black p-4 ">
       <Reveal>
         <p className="text-white 2xl:text-9xl xl:text-8xl lg:text-8xl md:text-6xl sm-4xl text-4xl">
           Unsight
