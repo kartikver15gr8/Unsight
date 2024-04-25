@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    background-color: black;
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    scroll-behavior: smooth;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -36,6 +40,7 @@
   }
 
   .dark {
+    scroll-behavior: smooth;
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -63,14 +68,5 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <div className="flex min-h-screen pt-14 bg-black">
+        <div className="flex min-h-screen pt-14 justify-center bg-black">
           <Sidebar />
           {children}
           <Explorebar />
