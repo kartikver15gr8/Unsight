@@ -1,5 +1,5 @@
-import { Button } from "./ui/button";
-import Reveal from "./reveal";
+import { Button } from "../ui/button";
+import Reveal from "../reveal";
 
 export default function MainpageTitle() {
   return (

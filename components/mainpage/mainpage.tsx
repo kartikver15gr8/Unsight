@@ -1,5 +1,5 @@
 import MainpageTitle from "./mainpagetitle";
-import Reveal from "./reveal";
+import Reveal from "../reveal";
 import Penn from "@/public/Penn.png";
 import MIT from "@/public/MIT.png";
 import Cambridge from "@/public/Cambridge.png";
@@ -8,9 +8,10 @@ import Nasa from "@/public/NASA.png";
 import Image from "next/image";
 import un from "@/public/un.png";
 import unsightcover from "@/public/unsightcover.png";
+import IntroPage from "./intro";
 export default function Mainpage() {
   return (
-    <div className="pt-14 text-white items-center flex flex-col w-[100%] min-h-screen bg-black ">
+    <div className="pt-14 text-white flex flex-col w-[100%] min-h-screen bg-black ">
       <div className="flex w-full h-[700px] items-center mb-10">
         <MainpageTitle />
         <div className="w-[50%] h-full flex items-center ">
@@ -87,6 +88,7 @@ export default function Mainpage() {
           <p className="text-slate-300 font-bold text-lg">Reddit</p>
         </div>
       </div>
+      <IntroPage />
     </div>
   );
 }
