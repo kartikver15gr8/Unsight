@@ -14,7 +14,7 @@ export default async function Feed() {
   return (
     <div className="w-[50%] p-2 px-4 text-slate-200 flex flex-col max-h-full">
       <PostPanel />
-      <div className="post overflow-auto overflow-y-scroll h-[80vh] scrollbar-hide">
+      <div className="overflow-auto overflow-y-scroll h-[80vh] scrollbar-hide">
         {feed.map((e, key) => {
           return (
             <div className="">

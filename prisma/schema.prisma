@@ -36,7 +36,7 @@ model Posts {
   imgUrl      String?
   user        User    @relation(fields: [userId], references: [id])
   userId      String
-  like        Int?
+  like        Int?    @default(0)
 }
 
 model Account {

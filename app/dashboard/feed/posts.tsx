@@ -1,4 +1,8 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export async function Posts({
   id,
@@ -13,8 +17,23 @@ export async function Posts({
   likes: number | null;
   userId: string;
 }) {
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLike = async () => {
+    try {
+      const res = await axios.post("http://localhost:3000/api/user/likepost", {
+        postId: id,
+      });
+
+      window.location.reload();
+      return res.data;
+    } catch (error) {
+      return error;
+    }
+  };
+
   return (
-    <Card className="p-4 my-4 border-slate-600  text-white bg-black">
+    <Card className="p-4 my-2 border-slate-600  text-white bg-black">
       <div className="flex">
         <img
           className="w-12 h-12 rounded-full mr-2 border-slate-500 border"
@@ -33,7 +52,10 @@ export async function Posts({
 
       <p className="ml-2 mt-5 font-bold">{description}</p>
       <div className="flex mt-4 mb-2">
-        <div className="w-14 h-8  justify-center flex items-center p-1 bg-slate-800 rounded-full hover:bg-blue-900">
+        <div
+          onClick={handleLike}
+          className="w-14 h-8  justify-center flex items-center p-1 bg-slate-800 rounded-full hover:bg-blue-900"
+        >
           <svg
             className="w-5"
             xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +69,7 @@ export async function Posts({
               <path d="M178 40c-20.65 0-38.73 8.88-50 23.89C116.73 48.88 98.65 40 78 40a62.07 62.07 0 0 0-62 62c0 70 103.79 126.66 108.21 129a8 8 0 0 0 7.58 0C136.21 228.66 240 172 240 102a62.07 62.07 0 0 0-62-62m-50 174.8c-18.26-10.64-96-59.11-96-112.8a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8" />
             </g>
           </svg>
-          <p className="ml-1">{likes ? likes : 1}</p>
+          <p className="ml-1">{likes ? likes : 0}</p>
         </div>
 
         <div className="w-14 h-8 ml-2 justify-center flex items-center p-1 bg-slate-800 rounded-full hover:bg-blue-900">
@@ -64,7 +86,7 @@ export async function Posts({
               />
             </g>
           </svg>
-          <p className="ml-1">{likes ? likes : 1}</p>
+          <p className="ml-1">{likes ? likes : 0}</p>
         </div>
 
         <div className="w-14 h-8 ml-2 justify-center flex items-center p-1 bg-slate-800 rounded-full hover:bg-blue-900">
@@ -81,9 +103,9 @@ export async function Posts({
               />
               <path
                 stroke="white"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M12 21a9 9 0 1 0-9-9c0 1.488.36 2.89 1 4.127L3 21l4.873-1c1.236.639 2.64 1 4.127 1"
               />
             </g>

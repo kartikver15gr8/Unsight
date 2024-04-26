@@ -7,12 +7,12 @@ import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import Navbar from "@/components/navbar";
 import Landing from "@/components/landing";
-import Mainpage from "@/components/mainpage";
+import Mainpage from "@/components/mainpage/mainpage";
 
 export default function Home() {
   // const session = useSession();
   return (
-    <div>
+    <div className="">
       <Navbar />
       <Mainpage />
     </div>
