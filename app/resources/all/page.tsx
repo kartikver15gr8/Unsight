@@ -1,27 +1,21 @@
 import ResourceCard from "../resourcecard";
-export default function AllResources() {
+import { GetAllResources } from "./getall";
+export default async function AllResources() {
+  const resources = await GetAllResources();
   return (
-    <div className=" px-4">
-      <div className="">
-        <ResourceCard
-          id={1}
-          title="Web Development"
-          description="Learn full stack web development"
-          resourceLink="https://app.100xdevs.com/"
-          catagory="Web Development"
-          userId=""
-          upvotes={1}
-        />
-        <ResourceCard
-          id={1}
-          title="Web Development"
-          description="Learn full stack web development"
-          resourceLink="https://app.100xdevs.com/"
-          catagory="Web Development"
-          userId=""
-          upvotes={1}
-        />
-      </div>
+    <div className="px-4">
+      {resources.map((e, key) => {
+        return (
+          <ResourceCard
+            title={e.title}
+            description={e.description}
+            categary={e.categary}
+            resourceLink={e.resourceLink}
+            id={e.id}
+            userId={e.userId}
+          />
+        );
+      })}
     </div>
   );
 }

@@ -5,18 +5,16 @@ import { Button } from "@/components/ui/button";
 export default function ResourceCard({
   id,
   userId,
-  catagory,
+  categary,
   title,
   description,
-  upvotes,
   resourceLink,
 }: {
   id: number;
   userId: string;
-  catagory: string;
+  categary: string;
   title: string;
   description: string;
-  upvotes: number;
   resourceLink: string;
 }) {
   return (
@@ -26,12 +24,10 @@ export default function ResourceCard({
         <p className="text-md">{description}</p>
       </div>
       <div className="border rounded-xl text-lg w-fit px-2 mt-5 ">
-        {catagory}
+        {categary}
       </div>
-      <div className="flex mt-10">
-        <Button className="w-[20%] rounded-xl mr-2 h-14 text-lg">
-          {upvotes}
-        </Button>
+      <div className="flex mt-4">
+        <Button className="w-[20%] rounded-xl mr-2 h-14 text-lg">{1}</Button>
 
         <Button className="w-[80%] rounded-xl ml-2 h-14">
           <a
