@@ -26,8 +26,9 @@ model User {
   // Optional for WebAuthn support
   Authenticator Authenticator[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  Resources Resources[]
 }
 
 model Posts {
@@ -37,6 +38,16 @@ model Posts {
   user        User    @relation(fields: [userId], references: [id])
   userId      String
   like        Int?    @default(0)
+}
+
+model Resources {
+  id           Int    @id @default(autoincrement())
+  title        String
+  description  String
+  user         User   @relation(fields: [userId], references: [id])
+  userId       String
+  categary     String
+  resourceLink String
 }
 
 model Account {
