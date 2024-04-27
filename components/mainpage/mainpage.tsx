@@ -9,6 +9,8 @@ import Image from "next/image";
 import un from "@/public/un.png";
 import unsightcover from "@/public/unsightcover.png";
 import IntroPage from "./intro";
+import ImageBanner from "./imagebanner";
+import Footer from "./footer";
 export default function Mainpage() {
   return (
     <div className="pt-14 text-white flex flex-col w-[100%] min-h-screen bg-black ">
@@ -17,7 +19,7 @@ export default function Mainpage() {
         <div className="w-[50%] h-full flex items-center ">
           <Reveal>
             <Image
-              className="m-auto w-[80%] hover:rotate-180 transition duration-1000"
+              className="m-auto hover:scale-75 w-[80%] hover:rotate-180 transition duration-1000"
               src={unsightcover}
               alt=""
             />
@@ -88,7 +90,17 @@ export default function Mainpage() {
           <p className="text-slate-300 font-bold text-lg">Reddit</p>
         </div>
       </div>
-      <IntroPage />
+      <Reveal>
+        <div className="w-[100%] flex justify-center my-10">
+          <ImageBanner />
+        </div>
+      </Reveal>
+      <Reveal>
+        <IntroPage />
+      </Reveal>
+      <Reveal>
+        <Footer />
+      </Reveal>
     </div>
   );
 }

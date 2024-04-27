@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export async function Posts({
+export function Posts({
   id,
   description,
   imgUrl,

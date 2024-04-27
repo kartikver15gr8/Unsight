@@ -20,7 +20,8 @@ export default function PostPanel() {
         { description }
       );
       console.log("el");
-      router.push("/dashboard/feed");
+      setPost("");
+      window.location.reload();
       return response.data;
     } finally {
       setIsAdding(false);
