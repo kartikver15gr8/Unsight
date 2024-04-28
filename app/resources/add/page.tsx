@@ -9,7 +9,7 @@ import axios from "axios";
 export default function Add() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [categary, setCategary] = useState("");
   const [resourceLink, setResourceLink] = useState("");
 
   const session = useSession();
@@ -22,7 +22,7 @@ export default function Add() {
         {
           title: title,
           description: description,
-          category: category,
+          categary: categary,
           resourceLink: resourceLink,
         }
       );
@@ -50,14 +50,14 @@ export default function Add() {
         />
 
         <select
-          value={category}
+          value={categary}
           onChange={(e) => {
-            setCategory(e.target.value);
-            console.log(category.toString());
+            setCategary(e.target.value);
+            console.log(categary.toString());
           }}
           className="text-black border rounded-xl w-[80%] p-4 mb-2 shadow-md"
         >
-          <option value="">Select a category</option>
+          <option value="">Select a categary</option>
           <option value="webdev">Web Development</option>
           <option value="aiml">AI and ML</option>
           <option value="blockchain">Blockchain & Web3</option>

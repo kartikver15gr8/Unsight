@@ -8,6 +8,7 @@ import z from "zod";
 import { Posts } from "./posts";
 import { GetFeed } from "./getfeed";
 import PostPanel from "@/components/user/postPanel";
+import Reveal from "@/components/reveal";
 
 export default async function Feed() {
   const feed = await GetFeed();
@@ -17,16 +18,18 @@ export default async function Feed() {
       <div className="overflow-auto overflow-y-scroll h-[80vh] scrollbar-hide">
         {feed.map((e, key) => {
           return (
-            <div className="">
-              <Posts
-                key={key}
-                id={e.id}
-                description={e.description}
-                imgUrl={e.imgUrl}
-                likes={e.like}
-                userId={e.userId}
-              ></Posts>
-            </div>
+            <Reveal>
+              <div className="">
+                <Posts
+                  key={key}
+                  id={e.id}
+                  description={e.description}
+                  imgUrl={e.imgUrl}
+                  likes={e.like}
+                  userId={e.userId}
+                ></Posts>
+              </div>
+            </Reveal>
           );
         })}
       </div>

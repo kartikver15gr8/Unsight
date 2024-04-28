@@ -5,7 +5,7 @@ import { prisma } from "@/lib/db";
 export async function POST(req: NextRequest) {
   const session = await auth();
 
-  const { title, description, category, resourceLink } = await req.json();
+  const { title, description, categary, resourceLink } = await req.json();
 
   const userEmail = session?.user?.email;
 
@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
           title: title,
           description: description,
           userId: user.id,
-          categary: category,
+          categary: categary,
           resourceLink: resourceLink,
         },
       });
