@@ -20,6 +20,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.1.7",
+    "link-preview-js": "^3.0.5",
     "lucide-react": "^0.372.0",
     "next": "^14.2.3",
     "next-auth": "^5.0.0-beta.16",
