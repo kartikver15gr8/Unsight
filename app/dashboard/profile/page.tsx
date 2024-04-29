@@ -13,7 +13,7 @@ export default async function Profile() {
         <div className="">
           {posts.map((e, key) => {
             return (
-              <Reveal>
+              <Reveal key={key}>
                 <div className="">
                   <Posts
                     key={key}

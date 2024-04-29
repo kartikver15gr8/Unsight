@@ -21,7 +21,7 @@ export default function MainpageTitle() {
       </Reveal>
       <Reveal>
         <p className="mb-10 text-md text-slate-300">
-          "Explore, Connect, and Share With Confidence"
+          Explore, Connect, and Share With Confidence
         </p>
       </Reveal>
 

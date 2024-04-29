@@ -18,7 +18,7 @@ export default async function Feed() {
       <div className="overflow-auto overflow-y-scroll h-[80vh] scrollbar-hide">
         {feed.map((e, key) => {
           return (
-            <Reveal>
+            <Reveal key={key}>
               <div className="">
                 <Posts
                   key={key}
