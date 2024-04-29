@@ -10,7 +10,7 @@ export const GetAllResources = async () => {
       title: "string",
       description: "string",
       userId: "string",
-      catogary: "string",
+      categary: "string",
       upvotes: [""],
       resourceLink: "string",
     },

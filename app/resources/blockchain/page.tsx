@@ -8,7 +8,7 @@ export default async function Blockchain() {
     <div className="px-4 overflow-auto overflow-y-scroll h-[88vh] scrollbar-hide">
       {Web3Resources.map((e, key) => {
         return (
-          <Reveal>
+          <Reveal key={key}>
             <ResourceCard
               key={key}
               id={e.id}

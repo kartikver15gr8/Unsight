@@ -7,7 +7,7 @@ export default async function AllResources() {
     <div className="px-4 overflow-auto overflow-y-scroll h-[88vh] scrollbar-hide">
       {resources.map((e, key) => {
         return (
-          <Reveal>
+          <Reveal key={key}>
             <ResourceCard
               key={key}
               title={e.title}
