@@ -1,4 +1,5 @@
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -13,9 +14,11 @@ export default function Footer() {
             {" "}
             indulge with them, share your thoughts & network.
           </p>
-          <Button className="bg-gradient-to-r from-blue-800 via-blue-500 to-blue-600 font-bold hover:scale-110 transition-all duration-200">
-            Sign in using student email
-          </Button>
+          <Link href="/signIn">
+            <Button className="bg-gradient-to-r from-blue-800 via-blue-500 to-blue-600 font-bold hover:scale-110 transition-all duration-200">
+              Sign in using student email
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="border-t border-[#1F72AF] w-[100%] text-[#1F72AF] flex flex-col  items-center py-10  ">
