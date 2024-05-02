@@ -21,7 +21,11 @@ export function Posts({
 
   const handleLike = async () => {
     try {
-      const res = await axios.post("http://localhost:3000/api/user/likepost", {
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/user/likepost"
+          : "https://unsight.vercel.app/api/user/likepost";
+      const res = await axios.post(apiUrl, {
         postId: id,
       });
 

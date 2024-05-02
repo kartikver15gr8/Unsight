@@ -17,15 +17,16 @@ export default function Add() {
 
   const handleOnClick = async () => {
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/user/addresourse",
-        {
-          title: title,
-          description: description,
-          categary: categary,
-          resourceLink: resourceLink,
-        }
-      );
+      const apiUrl =
+        process.env.NODE_ENV === "development"
+          ? "http://localhost:3000/api/user/addresource"
+          : "https://unsight.vercel.app/api/user/addresource";
+      const res = await axios.post(apiUrl, {
+        title: title,
+        description: description,
+        categary: categary,
+        resourceLink: resourceLink,
+      });
 
       router.push("/resources/all");
       return res.data;
