@@ -16,12 +16,14 @@ export default function Mainpage() {
     <div className="pt-14 text-white flex flex-col w-[100%] min-h-screen bg-black ">
       <div className="flex w-full h-[700px] items-center mb-10">
         <MainpageTitle />
-        <div className="w-[50%] h-full flex items-center ">
+        <div className="w-[50%] h-full flex items-center justify-center ">
           <Reveal>
             <Image
-              className="m-auto hover:scale-75 w-[80%] hover:rotate-180 transition duration-1000"
+              className="m-auto hover:scale-90 hover:rotate-180 transition duration-1000"
               src={unsightcover}
               alt=""
+              width={600}
+              height={600}
             />
           </Reveal>
         </div>
