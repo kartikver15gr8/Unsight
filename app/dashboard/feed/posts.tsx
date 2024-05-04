@@ -24,7 +24,7 @@ export function Posts({
       const apiUrl =
         process.env.NODE_ENV === "development"
           ? "http://localhost:3000/api/user/likepost"
-          : "https://unsight.vercel.app/api/user/likepost";
+          : "https://www.unsight.club/api/user/likepost";
       const res = await axios.post(apiUrl, {
         postId: id,
       });

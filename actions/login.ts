@@ -10,7 +10,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
   const confirmationLink =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/confirm-email"
-      : "https://unsight.vercel.app/confirm-email";
+      : "https://www.unsight.club/confirm-email";
   const clgEmails = universities;
 
   //   Check to see if data is valid

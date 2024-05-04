@@ -19,8 +19,8 @@ export default function Add() {
     try {
       const apiUrl =
         process.env.NODE_ENV === "development"
-          ? "http://localhost:3000/api/user/addresource"
-          : "https://unsight.vercel.app/api/user/addresource";
+          ? "http://localhost:3000/api/user/addresourse"
+          : "https://www.unsight.club/api/user/addresourse";
       const res = await axios.post(apiUrl, {
         title: title,
         description: description,
@@ -31,6 +31,8 @@ export default function Add() {
       router.push("/resources/all");
       return res.data;
     } catch (error) {
+      console.log(error);
+
       return `Error: ${error}`;
     }
   };
