@@ -1,5 +1,6 @@
 import { Button } from "../ui/button";
 import Reveal from "../reveal";
+import Link from "next/link";
 
 export default function MainpageTitle() {
   return (
@@ -26,9 +27,11 @@ export default function MainpageTitle() {
       </Reveal>
 
       <Reveal>
-        <Button className="font-bold rounded-xl flex justify-center text-white text-xl w-40 h-12 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 hover:h-14 transition-all duration-300">
-          Join Today
-        </Button>
+        <Link href="/signIn">
+          <Button className="font-bold rounded-xl flex justify-center text-white text-xl w-40 h-12 bg-gradient-to-r from-blue-800 via-blue-600 to-blue-500 hover:h-14 transition-all duration-300">
+            Join Today
+          </Button>
+        </Link>
       </Reveal>
     </div>
   );
