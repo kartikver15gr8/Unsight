@@ -103,7 +103,7 @@ export default function Navbar() {
           </div>
         ) : (
           <div>
-            <Link href="/signIn">
+            <Link href="/api/auth/signin">
               <Button className="bg-transparent text-white hover:bg-slate-300 hover:text-black transition-all duration-300 mx-2">
                 Sign in
               </Button>

@@ -10027,4 +10027,5 @@ export const universities = [
   "westminsteru.edu",
   "dom.edu",
   "gandakiuniversity.edu.np",
+  "gmail.com",
 ];

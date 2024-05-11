@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { throttle } from "./throttle";
 
-import z from "zod";
+import { z } from "zod";
 
 export default function PostPanel() {
   const router = useRouter();
@@ -20,7 +20,6 @@ export default function PostPanel() {
           ? "http://localhost:3000/api/user/createpost"
           : "https://www.unsight.club/api/user/createpost";
       const response = await axios.post(apiUrl, { description });
-      console.log("el");
       setPost("");
       window.location.reload();
       return response.data;
