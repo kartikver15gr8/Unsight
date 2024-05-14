@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { siteConfig } from "@/config/site-config";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Unsight",
-  description: "Share your thoughts freely",
-};
+export const metadata: Metadata = siteConfig;
 
 export default function RootLayout({
   children,
