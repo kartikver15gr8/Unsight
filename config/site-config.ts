@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-const TITLE = "Unsight - Join the global community of students with Anonymity";
+const TITLE = "Unsight - Join the global community of students!";
 const DESCRIPTION =
   "Interact in a global community of students. share thoughts, opportunities, resources and more, freely keeping your identity anonymous.";
 
