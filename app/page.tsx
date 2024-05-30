@@ -14,9 +14,9 @@ export default function Home() {
   // const session = useSession();
   return (
     <div className="">
-      <div className="fixed mt-16 z-10">
+      {/* <div className="fixed mt-16 z-10">
         <Update />
-      </div>
+      </div> */}
       <Navbar />
       <Mainpage />
     </div>
