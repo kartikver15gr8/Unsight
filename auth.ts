@@ -25,4 +25,7 @@ export const {
     strategy: "jwt",
   },
   ...authConfig,
+  pages: {
+    signIn: "/signIn",
+  },
 });
