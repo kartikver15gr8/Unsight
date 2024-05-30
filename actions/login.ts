@@ -27,7 +27,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
   if (email) {
     for (let i = 0; i < clgEmails.length; i++) {
       if (clgEmails[i] == email.split("@")[1]) {
-        signIn("resend", { email, redirect: false });
+        await signIn("resend", { email, redirect: false });
         return { success: `Email sent to ${email}` };
       }
     }
