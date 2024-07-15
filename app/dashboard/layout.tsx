@@ -19,15 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Navbar />
-        <div className="flex min-h-screen pt-14 justify-center bg-black">
-          <Sidebar />
-          {children}
-          <Explorebar />
-        </div>
-      </body>
-    </html>
+    <>
+      <Navbar />
+      <div className="flex min-h-screen pt-14 justify-center bg-black">
+        <Sidebar />
+        {children}
+        <Explorebar />
+      </div>
+    </>
   );
 }
